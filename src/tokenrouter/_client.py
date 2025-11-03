@@ -44,7 +44,7 @@ __all__ = [
 
 ENVIRONMENTS: Dict[str, str] = {
     "production": "https://api.tokenrouter.io",
-    "environment_1": "http://localhost:8002",
+    "local": "http://localhost:8002",
 }
 
 
@@ -56,13 +56,13 @@ class Tokenrouter(SyncAPIClient):
     # client options
     api_key: str
 
-    _environment: Literal["production", "environment_1"] | NotGiven
+    _environment: Literal["production", "local"] | NotGiven
 
     def __init__(
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | NotGiven = not_given,
+        environment: Literal["production", "local"] | NotGiven = not_given,
         base_url: str | httpx.URL | None | NotGiven = not_given,
         timeout: float | Timeout | None | NotGiven = not_given,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -159,7 +159,7 @@ class Tokenrouter(SyncAPIClient):
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | None = None,
+        environment: Literal["production", "local"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = not_given,
         http_client: httpx.Client | None = None,
@@ -250,13 +250,13 @@ class AsyncTokenrouter(AsyncAPIClient):
     # client options
     api_key: str
 
-    _environment: Literal["production", "environment_1"] | NotGiven
+    _environment: Literal["production", "local"] | NotGiven
 
     def __init__(
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | NotGiven = not_given,
+        environment: Literal["production", "local"] | NotGiven = not_given,
         base_url: str | httpx.URL | None | NotGiven = not_given,
         timeout: float | Timeout | None | NotGiven = not_given,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -353,7 +353,7 @@ class AsyncTokenrouter(AsyncAPIClient):
         self,
         *,
         api_key: str | None = None,
-        environment: Literal["production", "environment_1"] | None = None,
+        environment: Literal["production", "local"] | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = not_given,
         http_client: httpx.AsyncClient | None = None,
