@@ -16,12 +16,9 @@ The REST API documentation can be found on [tokenrouter.io](https://tokenrouter.
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/tokenrouter/tokenrouter-python.git
+# install from PyPI
+pip install tokenrouter
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://www.stainless.com/docs/guides/publish), this will become: `pip install tokenrouter`
 
 ## Usage
 
@@ -83,8 +80,8 @@ By default, the async client uses `httpx` for HTTP requests. However, for improv
 You can enable this by installing `aiohttp`:
 
 ```sh
-# install from the production repo
-pip install 'tokenrouter[aiohttp] @ git+ssh://git@github.com/tokenrouter/tokenrouter-python.git'
+# install from PyPI
+pip install tokenrouter[aiohttp]
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
