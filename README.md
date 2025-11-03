@@ -34,7 +34,7 @@ from tokenrouter import Tokenrouter
 client = Tokenrouter(
     api_key=os.environ.get("TOKENROUTER_API_KEY"),  # This is the default and can be omitted
     # defaults to "production".
-    environment="environment_1",
+    environment="local",
 )
 
 response_object = client.responses.create(
@@ -60,7 +60,7 @@ from tokenrouter import AsyncTokenrouter
 client = AsyncTokenrouter(
     api_key=os.environ.get("TOKENROUTER_API_KEY"),  # This is the default and can be omitted
     # defaults to "production".
-    environment="environment_1",
+    environment="local",
 )
 
 
