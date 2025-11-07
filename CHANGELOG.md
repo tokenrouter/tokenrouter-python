@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 (2025-11-07)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/tokenrouter/tokenrouter-python/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** manual updates ([dbc5b61](https://github.com/tokenrouter/tokenrouter-python/commit/dbc5b613b01cc2157ebf2df2d289a323c444b2f3))
+
 ## 1.1.0 (2025-11-03)
 
 Full Changelog: [v1.0.16...v1.1.0](https://github.com/tokenrouter/tokenrouter-python/compare/v1.0.16...v1.1.0)
