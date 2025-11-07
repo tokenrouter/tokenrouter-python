@@ -21,7 +21,7 @@ from ._types import (
 )
 from ._utils import is_given, get_async_library
 from ._version import __version__
-from .resources import responses
+from .resources import responses, routing_rules, firewall_rules
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, TokenrouterError
 from ._base_client import (
@@ -44,12 +44,14 @@ __all__ = [
 
 ENVIRONMENTS: Dict[str, str] = {
     "production": "https://api.tokenrouter.io",
-    "local": "http://localhost:8002",
+    "local": "https://api.tokenrouter.test",
 }
 
 
 class Tokenrouter(SyncAPIClient):
     responses: responses.ResponsesResource
+    routing_rules: routing_rules.RoutingRulesResource
+    firewall_rules: firewall_rules.FirewallRulesResource
     with_raw_response: TokenrouterWithRawResponse
     with_streaming_response: TokenrouterWithStreamedResponse
 
@@ -132,6 +134,8 @@ class Tokenrouter(SyncAPIClient):
         )
 
         self.responses = responses.ResponsesResource(self)
+        self.routing_rules = routing_rules.RoutingRulesResource(self)
+        self.firewall_rules = firewall_rules.FirewallRulesResource(self)
         self.with_raw_response = TokenrouterWithRawResponse(self)
         self.with_streaming_response = TokenrouterWithStreamedResponse(self)
 
@@ -244,6 +248,8 @@ class Tokenrouter(SyncAPIClient):
 
 class AsyncTokenrouter(AsyncAPIClient):
     responses: responses.AsyncResponsesResource
+    routing_rules: routing_rules.AsyncRoutingRulesResource
+    firewall_rules: firewall_rules.AsyncFirewallRulesResource
     with_raw_response: AsyncTokenrouterWithRawResponse
     with_streaming_response: AsyncTokenrouterWithStreamedResponse
 
@@ -326,6 +332,8 @@ class AsyncTokenrouter(AsyncAPIClient):
         )
 
         self.responses = responses.AsyncResponsesResource(self)
+        self.routing_rules = routing_rules.AsyncRoutingRulesResource(self)
+        self.firewall_rules = firewall_rules.AsyncFirewallRulesResource(self)
         self.with_raw_response = AsyncTokenrouterWithRawResponse(self)
         self.with_streaming_response = AsyncTokenrouterWithStreamedResponse(self)
 
@@ -439,21 +447,29 @@ class AsyncTokenrouter(AsyncAPIClient):
 class TokenrouterWithRawResponse:
     def __init__(self, client: Tokenrouter) -> None:
         self.responses = responses.ResponsesResourceWithRawResponse(client.responses)
+        self.routing_rules = routing_rules.RoutingRulesResourceWithRawResponse(client.routing_rules)
+        self.firewall_rules = firewall_rules.FirewallRulesResourceWithRawResponse(client.firewall_rules)
 
 
 class AsyncTokenrouterWithRawResponse:
     def __init__(self, client: AsyncTokenrouter) -> None:
         self.responses = responses.AsyncResponsesResourceWithRawResponse(client.responses)
+        self.routing_rules = routing_rules.AsyncRoutingRulesResourceWithRawResponse(client.routing_rules)
+        self.firewall_rules = firewall_rules.AsyncFirewallRulesResourceWithRawResponse(client.firewall_rules)
 
 
 class TokenrouterWithStreamedResponse:
     def __init__(self, client: Tokenrouter) -> None:
         self.responses = responses.ResponsesResourceWithStreamingResponse(client.responses)
+        self.routing_rules = routing_rules.RoutingRulesResourceWithStreamingResponse(client.routing_rules)
+        self.firewall_rules = firewall_rules.FirewallRulesResourceWithStreamingResponse(client.firewall_rules)
 
 
 class AsyncTokenrouterWithStreamedResponse:
     def __init__(self, client: AsyncTokenrouter) -> None:
         self.responses = responses.AsyncResponsesResourceWithStreamingResponse(client.responses)
+        self.routing_rules = routing_rules.AsyncRoutingRulesResourceWithStreamingResponse(client.routing_rules)
+        self.firewall_rules = firewall_rules.AsyncFirewallRulesResourceWithStreamingResponse(client.firewall_rules)
 
 
 Client = Tokenrouter
