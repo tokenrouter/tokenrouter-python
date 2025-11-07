@@ -8,6 +8,22 @@ from .responses import (
     ResponsesResourceWithStreamingResponse,
     AsyncResponsesResourceWithStreamingResponse,
 )
+from .routing_rules import (
+    RoutingRulesResource,
+    AsyncRoutingRulesResource,
+    RoutingRulesResourceWithRawResponse,
+    AsyncRoutingRulesResourceWithRawResponse,
+    RoutingRulesResourceWithStreamingResponse,
+    AsyncRoutingRulesResourceWithStreamingResponse,
+)
+from .firewall_rules import (
+    FirewallRulesResource,
+    AsyncFirewallRulesResource,
+    FirewallRulesResourceWithRawResponse,
+    AsyncFirewallRulesResourceWithRawResponse,
+    FirewallRulesResourceWithStreamingResponse,
+    AsyncFirewallRulesResourceWithStreamingResponse,
+)
 
 __all__ = [
     "ResponsesResource",
@@ -16,4 +32,16 @@ __all__ = [
     "AsyncResponsesResourceWithRawResponse",
     "ResponsesResourceWithStreamingResponse",
     "AsyncResponsesResourceWithStreamingResponse",
+    "RoutingRulesResource",
+    "AsyncRoutingRulesResource",
+    "RoutingRulesResourceWithRawResponse",
+    "AsyncRoutingRulesResourceWithRawResponse",
+    "RoutingRulesResourceWithStreamingResponse",
+    "AsyncRoutingRulesResourceWithStreamingResponse",
+    "FirewallRulesResource",
+    "AsyncFirewallRulesResource",
+    "FirewallRulesResourceWithRawResponse",
+    "AsyncFirewallRulesResourceWithRawResponse",
+    "FirewallRulesResourceWithStreamingResponse",
+    "AsyncFirewallRulesResourceWithStreamingResponse",
 ]
