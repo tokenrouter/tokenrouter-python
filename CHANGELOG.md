@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.2.1 (2025-11-12)
+
+Full Changelog: [v1.2.0...v1.2.1](https://github.com/tokenrouter/tokenrouter-python/compare/v1.2.0...v1.2.1)
+
+### Bug Fixes
+
+* compat with Python 3.14 ([b6687b6](https://github.com/tokenrouter/tokenrouter-python/commit/b6687b649a2246d93f051fea8986162e1b9aa14d))
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([70b8b39](https://github.com/tokenrouter/tokenrouter-python/commit/70b8b3967a2c5f888cd84dd4783bef6c0694a748))
+
+
+### Chores
+
+* **package:** drop Python 3.8 support ([c833f67](https://github.com/tokenrouter/tokenrouter-python/commit/c833f67d4b66863f39372b45d78d8a6d8057d7aa))
+
 ## 1.2.0 (2025-11-07)
 
 Full Changelog: [v1.1.0...v1.2.0](https://github.com/tokenrouter/tokenrouter-python/compare/v1.1.0...v1.2.0)
