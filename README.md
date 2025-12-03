@@ -87,6 +87,7 @@ pip install tokenrouter[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from tokenrouter import DefaultAioHttpClient
 from tokenrouter import AsyncTokenrouter
@@ -94,7 +95,7 @@ from tokenrouter import AsyncTokenrouter
 
 async def main() -> None:
     async with AsyncTokenrouter(
-        api_key="My API Key",
+        api_key=os.environ.get("TOKENROUTER_API_KEY"),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         response_object = await client.responses.create(
