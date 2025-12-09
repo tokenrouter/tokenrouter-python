@@ -22,6 +22,8 @@ __all__ = [
 
 
 class Error(BaseModel):
+    """Error information (if status is 'failed')"""
+
     code: Optional[str] = None
 
     message: Optional[str] = None
@@ -30,6 +32,8 @@ class Error(BaseModel):
 
 
 class Metadata(BaseModel):
+    """Custom metadata attached to response"""
+
     provider: Optional[str] = None
     """Provider used for this request"""
 
@@ -56,6 +60,8 @@ class Metadata(BaseModel):
 
 
 class OutputContentUnionMember0(BaseModel):
+    """Text content"""
+
     text: Optional[str] = None
 
     type: Optional[Literal["text"]] = None
@@ -68,6 +74,8 @@ class OutputContentUnionMember1Function(BaseModel):
 
 
 class OutputContentUnionMember1(BaseModel):
+    """Tool call content"""
+
     id: Optional[str] = None
 
     function: Optional[OutputContentUnionMember1Function] = None
@@ -85,6 +93,8 @@ class Output(BaseModel):
 
 
 class Usage(BaseModel):
+    """Token usage statistics"""
+
     input_tokens: Optional[int] = None
     """Number of input tokens"""
 

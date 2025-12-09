@@ -10,10 +10,14 @@ __all__ = ["RoutingRule", "ActionJson", "ActionJsonAddWarning", "MatchJson"]
 
 
 class ActionJsonAddWarning(BaseModel):
+    """Add a custom warning to the response"""
+
     message: Optional[str] = None
 
 
 class ActionJson(BaseModel):
+    """Actions to take when this rule matches"""
+
     add_warning: Optional[ActionJsonAddWarning] = None
     """Add a custom warning to the response"""
 
@@ -28,6 +32,8 @@ class ActionJson(BaseModel):
 
 
 class MatchJson(BaseModel):
+    """Conditions that determine when this rule matches a request"""
+
     contains: Union[str, List[str], None] = None
     """String or array of strings to search for in user input"""
 
