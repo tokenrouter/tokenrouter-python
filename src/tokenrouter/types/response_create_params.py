@@ -128,15 +128,21 @@ class InputUnionMember1(TypedDict, total=False):
 
 
 class Reasoning(TypedDict, total=False):
+    """Configuration for reasoning models (o-series, gpt-5)"""
+
     effort: Literal["low", "medium", "high"]
 
 
 class StreamOptions(TypedDict, total=False):
+    """Options for streaming responses"""
+
     include_usage: bool
     """Include usage statistics in stream"""
 
 
 class TextJsonSchema(TypedDict, total=False):
+    """JSON Schema for structured output"""
+
     name: str
 
     schema: object
@@ -145,6 +151,8 @@ class TextJsonSchema(TypedDict, total=False):
 
 
 class Text(TypedDict, total=False):
+    """Configuration for structured text output"""
+
     json_schema: TextJsonSchema
     """JSON Schema for structured output"""
 
