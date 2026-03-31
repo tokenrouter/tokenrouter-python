@@ -23,7 +23,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestFirewallRules:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.create(
@@ -37,7 +37,7 @@ class TestFirewallRules:
         )
         assert_matches_type(FirewallRuleCreateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.create(
@@ -52,7 +52,7 @@ class TestFirewallRules:
         )
         assert_matches_type(FirewallRuleCreateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Tokenrouter) -> None:
         response = client.firewall_rules.with_raw_response.create(
@@ -70,7 +70,7 @@ class TestFirewallRules:
         firewall_rule = response.parse()
         assert_matches_type(FirewallRuleCreateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Tokenrouter) -> None:
         with client.firewall_rules.with_streaming_response.create(
@@ -90,7 +90,7 @@ class TestFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.retrieve(
@@ -98,7 +98,7 @@ class TestFirewallRules:
         )
         assert_matches_type(FirewallRuleRetrieveResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Tokenrouter) -> None:
         response = client.firewall_rules.with_raw_response.retrieve(
@@ -110,7 +110,7 @@ class TestFirewallRules:
         firewall_rule = response.parse()
         assert_matches_type(FirewallRuleRetrieveResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Tokenrouter) -> None:
         with client.firewall_rules.with_streaming_response.retrieve(
@@ -124,7 +124,7 @@ class TestFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.update(
@@ -132,7 +132,7 @@ class TestFirewallRules:
         )
         assert_matches_type(FirewallRuleUpdateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.update(
@@ -148,7 +148,7 @@ class TestFirewallRules:
         )
         assert_matches_type(FirewallRuleUpdateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: Tokenrouter) -> None:
         response = client.firewall_rules.with_raw_response.update(
@@ -160,7 +160,7 @@ class TestFirewallRules:
         firewall_rule = response.parse()
         assert_matches_type(FirewallRuleUpdateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: Tokenrouter) -> None:
         with client.firewall_rules.with_streaming_response.update(
@@ -174,13 +174,13 @@ class TestFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.list()
         assert_matches_type(FirewallRuleListResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Tokenrouter) -> None:
         response = client.firewall_rules.with_raw_response.list()
@@ -190,7 +190,7 @@ class TestFirewallRules:
         firewall_rule = response.parse()
         assert_matches_type(FirewallRuleListResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Tokenrouter) -> None:
         with client.firewall_rules.with_streaming_response.list() as response:
@@ -202,7 +202,7 @@ class TestFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: Tokenrouter) -> None:
         firewall_rule = client.firewall_rules.delete(
@@ -210,7 +210,7 @@ class TestFirewallRules:
         )
         assert_matches_type(FirewallRuleDeleteResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: Tokenrouter) -> None:
         response = client.firewall_rules.with_raw_response.delete(
@@ -222,7 +222,7 @@ class TestFirewallRules:
         firewall_rule = response.parse()
         assert_matches_type(FirewallRuleDeleteResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: Tokenrouter) -> None:
         with client.firewall_rules.with_streaming_response.delete(
@@ -242,7 +242,7 @@ class TestAsyncFirewallRules:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.create(
@@ -256,7 +256,7 @@ class TestAsyncFirewallRules:
         )
         assert_matches_type(FirewallRuleCreateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.create(
@@ -271,7 +271,7 @@ class TestAsyncFirewallRules:
         )
         assert_matches_type(FirewallRuleCreateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.firewall_rules.with_raw_response.create(
@@ -289,7 +289,7 @@ class TestAsyncFirewallRules:
         firewall_rule = await response.parse()
         assert_matches_type(FirewallRuleCreateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.firewall_rules.with_streaming_response.create(
@@ -309,7 +309,7 @@ class TestAsyncFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.retrieve(
@@ -317,7 +317,7 @@ class TestAsyncFirewallRules:
         )
         assert_matches_type(FirewallRuleRetrieveResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.firewall_rules.with_raw_response.retrieve(
@@ -329,7 +329,7 @@ class TestAsyncFirewallRules:
         firewall_rule = await response.parse()
         assert_matches_type(FirewallRuleRetrieveResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.firewall_rules.with_streaming_response.retrieve(
@@ -343,7 +343,7 @@ class TestAsyncFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.update(
@@ -351,7 +351,7 @@ class TestAsyncFirewallRules:
         )
         assert_matches_type(FirewallRuleUpdateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.update(
@@ -367,7 +367,7 @@ class TestAsyncFirewallRules:
         )
         assert_matches_type(FirewallRuleUpdateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.firewall_rules.with_raw_response.update(
@@ -379,7 +379,7 @@ class TestAsyncFirewallRules:
         firewall_rule = await response.parse()
         assert_matches_type(FirewallRuleUpdateResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.firewall_rules.with_streaming_response.update(
@@ -393,13 +393,13 @@ class TestAsyncFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.list()
         assert_matches_type(FirewallRuleListResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.firewall_rules.with_raw_response.list()
@@ -409,7 +409,7 @@ class TestAsyncFirewallRules:
         firewall_rule = await response.parse()
         assert_matches_type(FirewallRuleListResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.firewall_rules.with_streaming_response.list() as response:
@@ -421,7 +421,7 @@ class TestAsyncFirewallRules:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncTokenrouter) -> None:
         firewall_rule = await async_client.firewall_rules.delete(
@@ -429,7 +429,7 @@ class TestAsyncFirewallRules:
         )
         assert_matches_type(FirewallRuleDeleteResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.firewall_rules.with_raw_response.delete(
@@ -441,7 +441,7 @@ class TestAsyncFirewallRules:
         firewall_rule = await response.parse()
         assert_matches_type(FirewallRuleDeleteResponse, firewall_rule, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.firewall_rules.with_streaming_response.delete(

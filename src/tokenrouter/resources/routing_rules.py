@@ -8,7 +8,7 @@ import httpx
 
 from ..types import routing_rule_create_params, routing_rule_update_params
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -28,6 +28,14 @@ __all__ = ["RoutingRulesResource", "AsyncRoutingRulesResource"]
 
 
 class RoutingRulesResource(SyncAPIResource):
+    """
+    Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+    Routing rules enable fine-grained control over request routing based on content, metadata,
+    or other conditions. Rules are evaluated in priority order and can force specific providers,
+    models, or routing modes.
+    """
+
     @cached_property
     def with_raw_response(self) -> RoutingRulesResourceWithRawResponse:
         """
@@ -122,7 +130,7 @@ class RoutingRulesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._get(
-            f"/v1/routing-rules/{id}",
+            path_template("/v1/routing-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -161,7 +169,7 @@ class RoutingRulesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._patch(
-            f"/v1/routing-rules/{id}",
+            path_template("/v1/routing-rules/{id}", id=id),
             body=maybe_transform(
                 {
                     "action_json": action_json,
@@ -228,7 +236,7 @@ class RoutingRulesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._delete(
-            f"/v1/routing-rules/{id}",
+            path_template("/v1/routing-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -237,6 +245,14 @@ class RoutingRulesResource(SyncAPIResource):
 
 
 class AsyncRoutingRulesResource(AsyncAPIResource):
+    """
+    Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+    Routing rules enable fine-grained control over request routing based on content, metadata,
+    or other conditions. Rules are evaluated in priority order and can force specific providers,
+    models, or routing modes.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncRoutingRulesResourceWithRawResponse:
         """
@@ -331,7 +347,7 @@ class AsyncRoutingRulesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._get(
-            f"/v1/routing-rules/{id}",
+            path_template("/v1/routing-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -370,7 +386,7 @@ class AsyncRoutingRulesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._patch(
-            f"/v1/routing-rules/{id}",
+            path_template("/v1/routing-rules/{id}", id=id),
             body=await async_maybe_transform(
                 {
                     "action_json": action_json,
@@ -437,7 +453,7 @@ class AsyncRoutingRulesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._delete(
-            f"/v1/routing-rules/{id}",
+            path_template("/v1/routing-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),

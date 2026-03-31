@@ -135,18 +135,35 @@ class Tokenrouter(SyncAPIClient):
 
     @cached_property
     def responses(self) -> ResponsesResource:
+        """Core endpoint for creating AI model responses with intelligent routing.
+
+        The Responses API automatically routes your requests to the optimal AI provider
+        based on your preferences, available models, and configured routing rules.
+        """
         from .resources.responses import ResponsesResource
 
         return ResponsesResource(self)
 
     @cached_property
     def routing_rules(self) -> RoutingRulesResource:
+        """
+        Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+        Routing rules enable fine-grained control over request routing based on content, metadata,
+        or other conditions. Rules are evaluated in priority order and can force specific providers,
+        models, or routing modes.
+        """
         from .resources.routing_rules import RoutingRulesResource
 
         return RoutingRulesResource(self)
 
     @cached_property
     def firewall_rules(self) -> FirewallRulesResource:
+        """Manage firewall rules for content filtering, security, and compliance.
+
+        Firewall rules provide content security controls through pattern matching. Rules can detect
+        and handle sensitive information, enforce policies, or implement custom content moderation.
+        """
         from .resources.firewall_rules import FirewallRulesResource
 
         return FirewallRulesResource(self)
@@ -347,18 +364,35 @@ class AsyncTokenrouter(AsyncAPIClient):
 
     @cached_property
     def responses(self) -> AsyncResponsesResource:
+        """Core endpoint for creating AI model responses with intelligent routing.
+
+        The Responses API automatically routes your requests to the optimal AI provider
+        based on your preferences, available models, and configured routing rules.
+        """
         from .resources.responses import AsyncResponsesResource
 
         return AsyncResponsesResource(self)
 
     @cached_property
     def routing_rules(self) -> AsyncRoutingRulesResource:
+        """
+        Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+        Routing rules enable fine-grained control over request routing based on content, metadata,
+        or other conditions. Rules are evaluated in priority order and can force specific providers,
+        models, or routing modes.
+        """
         from .resources.routing_rules import AsyncRoutingRulesResource
 
         return AsyncRoutingRulesResource(self)
 
     @cached_property
     def firewall_rules(self) -> AsyncFirewallRulesResource:
+        """Manage firewall rules for content filtering, security, and compliance.
+
+        Firewall rules provide content security controls through pattern matching. Rules can detect
+        and handle sensitive information, enforce policies, or implement custom content moderation.
+        """
         from .resources.firewall_rules import AsyncFirewallRulesResource
 
         return AsyncFirewallRulesResource(self)
@@ -486,18 +520,35 @@ class TokenrouterWithRawResponse:
 
     @cached_property
     def responses(self) -> responses.ResponsesResourceWithRawResponse:
+        """Core endpoint for creating AI model responses with intelligent routing.
+
+        The Responses API automatically routes your requests to the optimal AI provider
+        based on your preferences, available models, and configured routing rules.
+        """
         from .resources.responses import ResponsesResourceWithRawResponse
 
         return ResponsesResourceWithRawResponse(self._client.responses)
 
     @cached_property
     def routing_rules(self) -> routing_rules.RoutingRulesResourceWithRawResponse:
+        """
+        Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+        Routing rules enable fine-grained control over request routing based on content, metadata,
+        or other conditions. Rules are evaluated in priority order and can force specific providers,
+        models, or routing modes.
+        """
         from .resources.routing_rules import RoutingRulesResourceWithRawResponse
 
         return RoutingRulesResourceWithRawResponse(self._client.routing_rules)
 
     @cached_property
     def firewall_rules(self) -> firewall_rules.FirewallRulesResourceWithRawResponse:
+        """Manage firewall rules for content filtering, security, and compliance.
+
+        Firewall rules provide content security controls through pattern matching. Rules can detect
+        and handle sensitive information, enforce policies, or implement custom content moderation.
+        """
         from .resources.firewall_rules import FirewallRulesResourceWithRawResponse
 
         return FirewallRulesResourceWithRawResponse(self._client.firewall_rules)
@@ -511,18 +562,35 @@ class AsyncTokenrouterWithRawResponse:
 
     @cached_property
     def responses(self) -> responses.AsyncResponsesResourceWithRawResponse:
+        """Core endpoint for creating AI model responses with intelligent routing.
+
+        The Responses API automatically routes your requests to the optimal AI provider
+        based on your preferences, available models, and configured routing rules.
+        """
         from .resources.responses import AsyncResponsesResourceWithRawResponse
 
         return AsyncResponsesResourceWithRawResponse(self._client.responses)
 
     @cached_property
     def routing_rules(self) -> routing_rules.AsyncRoutingRulesResourceWithRawResponse:
+        """
+        Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+        Routing rules enable fine-grained control over request routing based on content, metadata,
+        or other conditions. Rules are evaluated in priority order and can force specific providers,
+        models, or routing modes.
+        """
         from .resources.routing_rules import AsyncRoutingRulesResourceWithRawResponse
 
         return AsyncRoutingRulesResourceWithRawResponse(self._client.routing_rules)
 
     @cached_property
     def firewall_rules(self) -> firewall_rules.AsyncFirewallRulesResourceWithRawResponse:
+        """Manage firewall rules for content filtering, security, and compliance.
+
+        Firewall rules provide content security controls through pattern matching. Rules can detect
+        and handle sensitive information, enforce policies, or implement custom content moderation.
+        """
         from .resources.firewall_rules import AsyncFirewallRulesResourceWithRawResponse
 
         return AsyncFirewallRulesResourceWithRawResponse(self._client.firewall_rules)
@@ -536,18 +604,35 @@ class TokenrouterWithStreamedResponse:
 
     @cached_property
     def responses(self) -> responses.ResponsesResourceWithStreamingResponse:
+        """Core endpoint for creating AI model responses with intelligent routing.
+
+        The Responses API automatically routes your requests to the optimal AI provider
+        based on your preferences, available models, and configured routing rules.
+        """
         from .resources.responses import ResponsesResourceWithStreamingResponse
 
         return ResponsesResourceWithStreamingResponse(self._client.responses)
 
     @cached_property
     def routing_rules(self) -> routing_rules.RoutingRulesResourceWithStreamingResponse:
+        """
+        Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+        Routing rules enable fine-grained control over request routing based on content, metadata,
+        or other conditions. Rules are evaluated in priority order and can force specific providers,
+        models, or routing modes.
+        """
         from .resources.routing_rules import RoutingRulesResourceWithStreamingResponse
 
         return RoutingRulesResourceWithStreamingResponse(self._client.routing_rules)
 
     @cached_property
     def firewall_rules(self) -> firewall_rules.FirewallRulesResourceWithStreamingResponse:
+        """Manage firewall rules for content filtering, security, and compliance.
+
+        Firewall rules provide content security controls through pattern matching. Rules can detect
+        and handle sensitive information, enforce policies, or implement custom content moderation.
+        """
         from .resources.firewall_rules import FirewallRulesResourceWithStreamingResponse
 
         return FirewallRulesResourceWithStreamingResponse(self._client.firewall_rules)
@@ -561,18 +646,35 @@ class AsyncTokenrouterWithStreamedResponse:
 
     @cached_property
     def responses(self) -> responses.AsyncResponsesResourceWithStreamingResponse:
+        """Core endpoint for creating AI model responses with intelligent routing.
+
+        The Responses API automatically routes your requests to the optimal AI provider
+        based on your preferences, available models, and configured routing rules.
+        """
         from .resources.responses import AsyncResponsesResourceWithStreamingResponse
 
         return AsyncResponsesResourceWithStreamingResponse(self._client.responses)
 
     @cached_property
     def routing_rules(self) -> routing_rules.AsyncRoutingRulesResourceWithStreamingResponse:
+        """
+        Manage custom routing rules to control how TokenRouter selects AI providers and models.
+
+        Routing rules enable fine-grained control over request routing based on content, metadata,
+        or other conditions. Rules are evaluated in priority order and can force specific providers,
+        models, or routing modes.
+        """
         from .resources.routing_rules import AsyncRoutingRulesResourceWithStreamingResponse
 
         return AsyncRoutingRulesResourceWithStreamingResponse(self._client.routing_rules)
 
     @cached_property
     def firewall_rules(self) -> firewall_rules.AsyncFirewallRulesResourceWithStreamingResponse:
+        """Manage firewall rules for content filtering, security, and compliance.
+
+        Firewall rules provide content security controls through pattern matching. Rules can detect
+        and handle sensitive information, enforce policies, or implement custom content moderation.
+        """
         from .resources.firewall_rules import AsyncFirewallRulesResourceWithStreamingResponse
 
         return AsyncFirewallRulesResourceWithStreamingResponse(self._client.firewall_rules)
