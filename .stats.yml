@@ -1,4 +1,4 @@
 configured_endpoints: 12
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/tokenrouter-io%2Ftokenrouter-9ff1346bfabc7b8292f0f7cfdf69eede3a554ba8c88162da9bd89e867902efb6.yml
-openapi_spec_hash: 4c8917e688399bbf2c33552bbe9c305a
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/tokenrouter-io%2Ftokenrouter-5737df548a2c97d7ca6472a6ab4d0aec384588272f567b3d493e4ca7516f46da.yml
+openapi_spec_hash: 566a588ef0e07ddeb5b72448905850e2
 config_hash: 53636d0dce2e139f538586307fb01d43
