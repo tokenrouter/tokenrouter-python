@@ -9,7 +9,7 @@ import httpx
 
 from ..types import firewall_rule_create_params, firewall_rule_update_params
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -29,6 +29,12 @@ __all__ = ["FirewallRulesResource", "AsyncFirewallRulesResource"]
 
 
 class FirewallRulesResource(SyncAPIResource):
+    """Manage firewall rules for content filtering, security, and compliance.
+
+    Firewall rules provide content security controls through pattern matching. Rules can detect
+    and handle sensitive information, enforce policies, or implement custom content moderation.
+    """
+
     @cached_property
     def with_raw_response(self) -> FirewallRulesResourceWithRawResponse:
         """
@@ -125,7 +131,7 @@ class FirewallRulesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._get(
-            f"/v1/firewall-rules/{id}",
+            path_template("/v1/firewall-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -167,7 +173,7 @@ class FirewallRulesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._patch(
-            f"/v1/firewall-rules/{id}",
+            path_template("/v1/firewall-rules/{id}", id=id),
             body=maybe_transform(
                 {
                     "action": action,
@@ -235,7 +241,7 @@ class FirewallRulesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._delete(
-            f"/v1/firewall-rules/{id}",
+            path_template("/v1/firewall-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -244,6 +250,12 @@ class FirewallRulesResource(SyncAPIResource):
 
 
 class AsyncFirewallRulesResource(AsyncAPIResource):
+    """Manage firewall rules for content filtering, security, and compliance.
+
+    Firewall rules provide content security controls through pattern matching. Rules can detect
+    and handle sensitive information, enforce policies, or implement custom content moderation.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncFirewallRulesResourceWithRawResponse:
         """
@@ -340,7 +352,7 @@ class AsyncFirewallRulesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._get(
-            f"/v1/firewall-rules/{id}",
+            path_template("/v1/firewall-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -382,7 +394,7 @@ class AsyncFirewallRulesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._patch(
-            f"/v1/firewall-rules/{id}",
+            path_template("/v1/firewall-rules/{id}", id=id),
             body=await async_maybe_transform(
                 {
                     "action": action,
@@ -450,7 +462,7 @@ class AsyncFirewallRulesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._delete(
-            f"/v1/firewall-rules/{id}",
+            path_template("/v1/firewall-rules/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),

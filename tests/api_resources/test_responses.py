@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestResponses:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: Tokenrouter) -> None:
         response = client.responses.create(
@@ -25,7 +25,7 @@ class TestResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Tokenrouter) -> None:
         response = client.responses.create(
@@ -78,7 +78,7 @@ class TestResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Tokenrouter) -> None:
         http_response = client.responses.with_raw_response.create(
@@ -90,7 +90,7 @@ class TestResponses:
         response = http_response.parse()
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Tokenrouter) -> None:
         with client.responses.with_streaming_response.create(
@@ -104,7 +104,7 @@ class TestResponses:
 
         assert cast(Any, http_response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_replay(self, client: Tokenrouter) -> None:
         response = client.responses.replay(
@@ -112,7 +112,7 @@ class TestResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_replay_with_all_params(self, client: Tokenrouter) -> None:
         response = client.responses.replay(
@@ -121,7 +121,7 @@ class TestResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_replay(self, client: Tokenrouter) -> None:
         http_response = client.responses.with_raw_response.replay(
@@ -133,7 +133,7 @@ class TestResponses:
         response = http_response.parse()
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_replay(self, client: Tokenrouter) -> None:
         with client.responses.with_streaming_response.replay(
@@ -147,7 +147,7 @@ class TestResponses:
 
         assert cast(Any, http_response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_replay(self, client: Tokenrouter) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `request_id` but received ''"):
@@ -161,7 +161,7 @@ class TestAsyncResponses:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.responses.create(
@@ -169,7 +169,7 @@ class TestAsyncResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.responses.create(
@@ -222,7 +222,7 @@ class TestAsyncResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncTokenrouter) -> None:
         http_response = await async_client.responses.with_raw_response.create(
@@ -234,7 +234,7 @@ class TestAsyncResponses:
         response = await http_response.parse()
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.responses.with_streaming_response.create(
@@ -248,7 +248,7 @@ class TestAsyncResponses:
 
         assert cast(Any, http_response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_replay(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.responses.replay(
@@ -256,7 +256,7 @@ class TestAsyncResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_replay_with_all_params(self, async_client: AsyncTokenrouter) -> None:
         response = await async_client.responses.replay(
@@ -265,7 +265,7 @@ class TestAsyncResponses:
         )
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_replay(self, async_client: AsyncTokenrouter) -> None:
         http_response = await async_client.responses.with_raw_response.replay(
@@ -277,7 +277,7 @@ class TestAsyncResponses:
         response = await http_response.parse()
         assert_matches_type(ResponseObject, response, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_replay(self, async_client: AsyncTokenrouter) -> None:
         async with async_client.responses.with_streaming_response.replay(
@@ -291,7 +291,7 @@ class TestAsyncResponses:
 
         assert cast(Any, http_response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_replay(self, async_client: AsyncTokenrouter) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `request_id` but received ''"):

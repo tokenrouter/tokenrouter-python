@@ -9,7 +9,7 @@ import httpx
 
 from ..types import response_create_params, response_replay_params
 from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -25,6 +25,12 @@ __all__ = ["ResponsesResource", "AsyncResponsesResource"]
 
 
 class ResponsesResource(SyncAPIResource):
+    """Core endpoint for creating AI model responses with intelligent routing.
+
+    The Responses API automatically routes your requests to the optimal AI provider
+    based on your preferences, available models, and configured routing rules.
+    """
+
     @cached_property
     def with_raw_response(self) -> ResponsesResourceWithRawResponse:
         """
@@ -245,7 +251,7 @@ class ResponsesResource(SyncAPIResource):
         if not request_id:
             raise ValueError(f"Expected a non-empty value for `request_id` but received {request_id!r}")
         return self._post(
-            f"/v1/responses/{request_id}",
+            path_template("/v1/responses/{request_id}", request_id=request_id),
             body=maybe_transform({"stream": stream}, response_replay_params.ResponseReplayParams),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
@@ -255,6 +261,12 @@ class ResponsesResource(SyncAPIResource):
 
 
 class AsyncResponsesResource(AsyncAPIResource):
+    """Core endpoint for creating AI model responses with intelligent routing.
+
+    The Responses API automatically routes your requests to the optimal AI provider
+    based on your preferences, available models, and configured routing rules.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncResponsesResourceWithRawResponse:
         """
@@ -475,7 +487,7 @@ class AsyncResponsesResource(AsyncAPIResource):
         if not request_id:
             raise ValueError(f"Expected a non-empty value for `request_id` but received {request_id!r}")
         return await self._post(
-            f"/v1/responses/{request_id}",
+            path_template("/v1/responses/{request_id}", request_id=request_id),
             body=await async_maybe_transform({"stream": stream}, response_replay_params.ResponseReplayParams),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
